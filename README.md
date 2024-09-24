@@ -10,13 +10,12 @@ Shift Baru: B
 
 ## PENJELASAN
 
-This project is a starting point for a Flutter application.
+![Lampiran Login](screenshot_login.png)
 
-A few resources to get you started if this is your first Flutter project:
+![Lampiran Home](screenshot_home.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Lampiran Side Menu](screenshot_sidemenu.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Lampiran Higher or Lower](screenshot_.highlow.png)
+
+![Lampiran About](screenshot_about.png)
