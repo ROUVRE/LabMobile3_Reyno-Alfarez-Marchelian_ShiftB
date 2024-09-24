@@ -141,6 +141,64 @@ Digunakan untuk menampilkan menu-menu di side menu.
 
 ---
 
-![Lampiran Higher or Lower](screenshot_.highlow.png)
+![Lampiran Higher or Lower](screenshot_highlow.png)
+
+ini adalah permainan Higher or Lower seperti yang saya buat di tugas pertemuan 1, namun dibuat dengan Flutter. Di game simple ini, user akan diberikan kesempatan 10 kali untuk menebak angka random dari 1 sampai 100 hanya dengan clue yang memberi tahu kalau input mereka lebih besar atau lebih kecil daripada jawaban yang di-generate program.
+
+```
+int jawaban = Random().nextInt(100) + 1;
+int attempt = 0;
+int kesempatan = 10;
+String hint = '';
+TextEditingController tebakanController = TextEditingController();
+```
+
+jawaban: Angka yang harus ditebak oleh pemain, dihasilkan secara acak antara 1 dan 100.
+attempt: Jumlah percobaan yang sudah dilakukan oleh pemain.
+kesempatan: Batas jumlah percobaan yang tersedia untuk pemain (10 kali).
+hint: Inisialisasi petunjuk yang akan ditampilkan kepada pemain berdasarkan tebakan mereka.
+tebakanController: Mengontrol input dari pemain yang digunakan untuk menebak angka.
+
+```
+void checkTebakan(String input) {
+  var tebakan = int.tryParse(input);
+
+  if (tebakan == null || tebakan < 1 || tebakan > 100) {
+    setState(() {
+      hint = 'Tebakan harus di antara 1-100!';
+    });
+    return;
+  }
+
+  setState(() {
+    attempt++;
+    kesempatan--;
+
+    if (tebakan < jawaban) {
+      hint = 'Terlalu kecil!';
+    } else if (tebakan > jawaban) {
+      hint = 'Terlalu besar!';
+    } else {
+      hint = 'Selamat, jawaban kamu benar! Setelah $attempt kali tebakan.';
+      _showResultDialog('Selamat!',
+          'Jawaban kamu benar setelah $attempt kali tebakan.\nJawabannya: $jawaban');
+    }
+
+    if (kesempatan == 0 && tebakan != jawaban) {
+      hint = 'Kesempatan habis! Jawabannya adalah $jawaban.';
+      _showResultDialog('Kesempatan habis!', 'Jawabannya adalah $jawaban.');
+    }
+  });
+}
+```
+Fungsi ini mengecek apakah tebakan pemain benar.
+- Jika tebakan lebih kecil dari angka sebenarnya, pesan "Terlalu kecil" muncul.
+- Jika tebakan lebih besar, pesan "Terlalu besar" muncul.
+- Jika tebakan benar, pemain akan diberi pesan selamat, dan dialog hasil akan ditampilkan.
+- Jika kesempatan habis, pemain akan diberi tahu jawaban sebenarnya.
+
+---
 
 ![Lampiran About](screenshot_about.png)
+
+Tampilan halaman About
