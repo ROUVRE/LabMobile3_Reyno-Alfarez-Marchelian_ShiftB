@@ -1,8 +1,11 @@
 # TUGAS PERTEMUAN 3 - PRAKTIKUM PEMROGRAMAN MOBILE
 
 Nama: Reyno Alfarez Marchelian
+
 NIM: H1D022111
+
 Shift Lama: E
+
 Shift Baru: B
 
 ## PENJELASAN
